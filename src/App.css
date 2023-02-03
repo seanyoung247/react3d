@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --min-screen-width: 280px;
+}
+
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  min-width: var(--min-screen-width);
+
+}
+
+.cube-side,
+.cube-cap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  background: darkred;
+  color: white;
+}
+
+.cube-cap {
+  background: darkblue;
+  color: white;
+}
+
+.plane {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1000px;
+  height: 1000px;
+  background: white;
+  background-image:
+    linear-gradient(45deg, #000 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #000 75%),
+    linear-gradient(45deg, transparent 75%, #000 75%),
+    linear-gradient(45deg, #000 25%, transparent 25%);
+  background-size:100px 100px;
+  background-position:0 0, 0 0, -50px -50px, 50px 50px;
+  transform-origin: center center;
+  transform: translate(-50%, -50%) rotateX(0.25turn);
+}
