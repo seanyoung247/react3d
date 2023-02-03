@@ -125,6 +125,12 @@ function App() {
 
   return (
     <>
+      <div id="cam-details">
+        <h3>Camera</h3>
+        <p>Position x: {camera.x} y: {camera.y} z: {camera.z}</p>
+        <p>Rotation x: {camera.rX.toFixed(2)} y: {camera.rY.toFixed(2)} z: {camera.rZ.toFixed(2)}</p>
+        <p>Focal Length: {camera.focalLength}</p>
+      </div>
       <View3D camera={camera}>
         <Cuboid width="150px" height="100px" depth="200px"
           front={<div className='cube-side'>Front</div>}
