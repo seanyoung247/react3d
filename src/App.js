@@ -19,33 +19,33 @@ function App() {
     // Nasty prototype code follows...
     const keypress = (e) => {
       switch (e.code) {
-        // Move backwards and forwards
+        // Move backwards and forwards (z-axis)
         case 'KeyW':
-          setCamera({
-            ...camera,
-            z: camera.z + 10
-          });
-          break;
-        case 'KeyS':
           setCamera({
             ...camera,
             z: camera.z - 10
           });
           break;
-        // Move left and right
+        case 'KeyS':
+          setCamera({
+            ...camera,
+            z: camera.z + 10
+          });
+          break;
+        // Move left and right (x-axis)
         case 'KeyA':
             setCamera({
               ...camera,
-              x: camera.x + 10
+              x: camera.x - 10
             });
             break;
         case 'KeyD':
           setCamera({
             ...camera,
-            x: camera.x - 10
+            x: camera.x + 10
           });
           break;
-        // Move up and down
+        // Move up and down (y-axis)
         case 'KeyZ':
           setCamera({
             ...camera,

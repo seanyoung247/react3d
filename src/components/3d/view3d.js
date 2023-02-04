@@ -27,7 +27,7 @@ export default function View3D({camera = camDefault, children}) {
         position: "relative",
         width: "100%",
         height: "100%",
-        translate: `${camera.x}px ${camera.y}px ${camera.z}px`,
+        translate: `${-camera.x}px ${camera.y}px ${-camera.z}px`,
     }
 
     return (
