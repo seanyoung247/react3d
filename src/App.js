@@ -69,13 +69,13 @@ function App() {
         case 'KeyQ':
           setCamera({
             ...camera,
-            rY: camera.rY - 0.05
+            rY: camera.rY + 0.05
           });
           break;
         case 'KeyE':
           setCamera({
             ...camera,
-            rY: camera.rY + 0.05
+            rY: camera.rY - 0.05
           });
           break;
         case 'KeyR':
@@ -88,6 +88,18 @@ function App() {
           setCamera({
             ...camera,
             rX: camera.rX - 0.05
+          });
+          break;
+        case 'KeyT':
+          setCamera({
+            ...camera,
+            rZ: camera.rZ + 0.05
+          });
+          break;
+        case 'KeyY':
+          setCamera({
+            ...camera,
+            rZ: camera.rZ - 0.05
           });
           break;
         // Resets rotation

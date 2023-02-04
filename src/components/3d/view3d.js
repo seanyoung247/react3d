@@ -20,7 +20,7 @@ export default function View3D({camera = camDefault, children}) {
         width: "100%",
         height: "100%",
         transformOrigin: `center center ${camera.focalLength}px`,
-        transform: `rotateX(${camera.rX}rad) rotateY(${camera.rY}rad) rotateZ(${camera.rZ}rad)`,
+        transform: `rotateX(${camera.rX}rad) rotateY(${-camera.rY}rad) rotateZ(${camera.rZ}rad)`,
     }
     const cam = {
         transformStyle: "preserve-3d",
