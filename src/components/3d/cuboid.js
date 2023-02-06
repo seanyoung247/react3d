@@ -1,5 +1,5 @@
 import React from 'react';
-import Object3D from './object3d';
+import { Object3D, Face3D } from './object3d';
 
 import Styles from './cuboid.module.css';
 
@@ -13,29 +13,29 @@ export default function Cuboid({
 
         <Object3D dimensions={ {...position, ...size} }>
 
-            <div style={ {"--r" : 0 } } className={ Styles.zside }>
+            <Face3D style={ {"--r" : 0 } } className={ Styles.zside }>
                 { children.front }
-            </div>
+            </Face3D>
 
-            <div style={ {"--r" : "180deg"} } className={ Styles.zside }>
+            <Face3D style={ {"--r" : "180deg"} } className={ Styles.zside }>
                 { children.back }
-            </div>
+            </Face3D>
 
-            <div style={ {"--r": "90deg"} } className={ Styles.xside }>
+            <Face3D style={ {"--r": "90deg"} } className={ Styles.xside }>
                 { children.right }
-            </div>
+            </Face3D>
 
-            <div style={ {"--r": "-90deg"} } className={ Styles.xside }>
+            <Face3D style={ {"--r": "-90deg"} } className={ Styles.xside }>
                 { children.left }
-            </div>
+            </Face3D>
 
-            <div style={ {"--r": "90deg"} } className={ Styles.yside }>
+            <Face3D style={ {"--r": "90deg"} } className={ Styles.yside }>
                 { children.top }
-            </div>
+            </Face3D>
 
-            <div style={ {"--r": "-90deg"} } className={ Styles.yside }>
+            <Face3D style={ {"--r": "-90deg"} } className={ Styles.yside }>
                 { children.bottom }
-            </div>
+            </Face3D>
 
         </Object3D>
     );

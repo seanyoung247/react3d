@@ -4,7 +4,7 @@ import { classList } from '../../utils/classlist.js';
 
 import './object3d.css';
 
-export default function Object3D({dimensions, className, children}) {
+export function Object3D({dimensions, className, children}) {
 
     const obj = {
         "--x": dimensions.x ?? '0px',
@@ -22,9 +22,9 @@ export default function Object3D({dimensions, className, children}) {
     );
 }
 
-export function Face3D(className, children) {
+export function Face3D({style, className, children}) {
     return (
-        <div className={ classList('face3d', className) }>
+        <div style={ style } className={ classList('face3d', className) }>
             { children }
         </div>
     )

@@ -1,9 +1,3 @@
-
-.xside, .yside, .zside {
-    position: absolute;
-    transform-style: preserve-3d;
-}
-
 .xside {
     width: var(--d);
     height: var(--h);
