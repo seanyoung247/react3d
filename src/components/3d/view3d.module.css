@@ -27,4 +27,3 @@
     position: relative;
     translate: var(--posX, 0) var(--posY, 0) calc(var(--posZ, 0) + var(--focalLength, 500px));
 }
-

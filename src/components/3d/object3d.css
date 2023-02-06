@@ -1,16 +1,15 @@
 .object3d {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transform-style: preserve-3d;
-
-    position: relative;
+    position: absolute;
     height: var(--h);
     width: var(--w);
-    translate: calc(var(--x)) calc(var(--y)) calc( var(--z));
+    top: 50%; left: 50%;
+    translate: calc(-50% + var(--x)) calc(-50% - var(--y)) calc( var(--z));
 }
 
 .face3d {
     position: absolute;
-    transform-style: preserve-3d; 
+    transform-style: preserve-3d;
+    top: 50%; left: 50%;
+    translate: -50% -50%;
 }

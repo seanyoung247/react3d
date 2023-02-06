@@ -5,13 +5,14 @@ import Styles from './cuboid.module.css';
 
 export default function Cuboid({
     position = {x: 0, y: 0, z: 0}, 
-    size = {w:"100px", h: "100px", d: "100px"}, 
-    children }) 
-{
+    size = {width:"100px", height: "100px", depth: "100px"}, 
+    children }) {
 
     return (
 
-        <Object3D dimensions={ {...position, ...size} }>
+        <Object3D 
+            dimensions={ {...position, ...size} } 
+            style={ {"--d": size.depth ?? "100px"} }>
 
             <Face3D style={ {"--r" : 0 } } className={ Styles.zside }>
                 { children.front }
