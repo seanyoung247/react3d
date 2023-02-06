@@ -1,0 +1,19 @@
+
+.viewport {
+    overflow:"hidden";
+    perspective: var(--focalLength, 500px);
+    width:"100%";
+    height:"100%";
+}
+
+.view-pane {
+    transform-style: "preserve-3d";
+    width: "100%";
+    height: "100%";
+}
+
+.scene {
+    transform-origin: center center var(--focalLength, 500px);
+    transform: rotateX(calc(var(--rotX) * 1rad)) rotateY(calc(var(--rotY, 0) * 1rad)) rotateZ(calc(var(--rotZ) * 1rad));
+}
+

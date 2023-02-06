@@ -1,11 +1,12 @@
 import React from 'react';
 
+import Styles from './view3d.module.css';
+
 const camDefault = {
-    x: 0, y: 0, z: 0,
+    x: 0, y: 200, z: 1000,
     rX: 0, rY: 0, rZ: 0,
-    focalLength: 500
+    focalLength: 1000
 }
-  
 
 export default function View3D({camera = camDefault, children}) {
 
@@ -27,8 +28,13 @@ export default function View3D({camera = camDefault, children}) {
         position: "relative",
         width: "100%",
         height: "100%",
-        translate: `${-camera.x}px ${camera.y}px ${-camera.z}px`,
+        translate: `${-camera.x}px ${camera.y}px ${-camera.z + camera.focalLength}px`,
     }
+
+    // const viewport = {
+    //     "--focalLength": `${camera.focalLength}px`
+    // }
+
 
     return (
         <div style={viewport}>

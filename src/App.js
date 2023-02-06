@@ -7,9 +7,9 @@ import './App.css';
 
 
 const camDefault = {
-  x: 0, y: 200, z: 0,
+  x: 0, y: 200, z: 1000,
   rX: 0, rY: 0, rZ: 0,
-  focalLength: 500
+  focalLength: 1000
 }
 
 
@@ -62,7 +62,7 @@ function App() {
         case 'KeyB':
           setCamera({
             ...camera,
-            x: 0, y: 200, z: 0
+            x: camDefault.x, y: camDefault.y, z: camDefault.z
           });
           break;
         // Look left right
@@ -106,7 +106,7 @@ function App() {
         case 'KeyV':
           setCamera({
             ...camera,
-            rX: 0, rY: 0, rZ: 0
+            rX: camDefault.rX, rY: camDefault.rY, rZ: camDefault.rZ
           });
           break;
         // Focal length
@@ -125,7 +125,7 @@ function App() {
         case 'KeyP':
           setCamera({
             ...camera,
-            focalLength: 500
+            focalLength: camDefault.focalLength
           });
           break;
       }
@@ -133,7 +133,6 @@ function App() {
     document.addEventListener('keydown', keypress);
     return () => document.removeEventListener('keydown', keypress);
   });
-
 
   return (
     <>
