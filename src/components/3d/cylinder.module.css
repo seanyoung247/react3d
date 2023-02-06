@@ -1,0 +1,10 @@
+.cap {
+    width: var(--w);
+    height: var(--w);
+    border-radius: 50%;
+}
+
+.side {
+    width: 0;
+    height: var(--h);
+}
