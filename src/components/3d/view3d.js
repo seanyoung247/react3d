@@ -3,7 +3,7 @@ import React from 'react';
 import Styles from './view3d.module.css';
 
 const camDefault = {
-    x: 0, y: 200, z: 1000,
+    x: 0, y: 200, z: 500,
     rX: 0, rY: 0, rZ: 0,
     focalLength: 1000
 }

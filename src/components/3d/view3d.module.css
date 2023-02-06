@@ -14,11 +14,11 @@
 
 .scene {
     transform-origin: center center var(--focalLength, 500px);
-    transform: rotateX(var(--rotX)) rotateY(var(--rotY)) rotateZ(var(--rotZ));
+    transform: rotateX(var(--rotX, 0)) rotateY(var(--rotY, 0)) rotateZ(var(--rotZ, 0));
 }
 
 .camera {
     position: relative;
-    translate: var(--posX) var(--posY) var(--posZ);
+    translate: var(--posX, 0) var(--posY, 0) calc(var(--posZ, 0) + var(--focalLength, 500px));
 }
 
