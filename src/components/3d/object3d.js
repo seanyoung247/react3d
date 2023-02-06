@@ -21,3 +21,11 @@ export default function Object3D({dimensions, className, children}) {
         </div>
     );
 }
+
+export function Face3D(className, children) {
+    return (
+        <div className={ classList('face3d', className) }>
+            { children }
+        </div>
+    )
+}

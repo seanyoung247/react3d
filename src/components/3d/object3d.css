@@ -1,10 +1,26 @@
 .object3d {
-    position: relative;
+    /*
+     * Internal face positioning. Places children in the center so that
+     * 3d objects origin coordinates are it's center.
+     */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transform-style: preserve-3d;
-    top: 50%;
-    left: 50%;
+
+    /*
+     * World origin is it's center with x,y,z coordinates of: 0,0,0.
+     * So to correctly place an object in 3D space we move the object 
+     * to the center and then offset it by it's x,y,z coordinates
+     */
+    position: relative;
     height: var(--h);
     width: var(--w);
-
+    top: 50%; left: 50%;
     translate: calc(-50% + var(--x)) calc(-50% - var(--y)) calc( var(--z));
+}
+
+.face3d {
+    position: absolute;
+    transform-style: preserve-3d; 
 }
