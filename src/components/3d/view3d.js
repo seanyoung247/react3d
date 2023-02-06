@@ -1,5 +1,4 @@
 import React from 'react';
-import { classList } from '../../utils/classlist';
 
 import Styles from './view3d.module.css';
 

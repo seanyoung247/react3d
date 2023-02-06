@@ -7,7 +7,7 @@ import './App.css';
 
 
 const camDefault = {
-  x: 0, y: 200, z: 1000,
+  x: 0, y: 200, z: 500,
   rX: 0, rY: 0, rZ: 0,
   focalLength: 1000
 }
@@ -143,13 +143,15 @@ function App() {
         <p>Focal Length: {camera.focalLength}</p>
       </div>
       <View3D camera={camera}>
-        <Cuboid width="150px" height="100px" depth="200px"
-          front={<div className='cube-side'>Front</div>}
-          back={<div className='cube-side'>Back</div>}
-          left={<div className='cube-side'>Left</div>}
-          right={<div className='cube-side'>Right</div>}
-          top={<div className='cube-cap'>Top</div>}
-          bottom={<div className='cube-cap'>Bottom</div>}>
+        <Cuboid position={{x: '100px', y: '50px', z: '500px'}} size={ {w:"150px", h:"100px", d:"200px"} }>
+          {{
+            front: (<div className='cube-side'>Front</div>),
+            back: (<div className='cube-side'>Back</div>),
+            left: (<div className='cube-side'>Left</div>),
+            right: (<div className='cube-side'>Right</div>),
+            top: (<div className='cube-cap'>Top</div>),
+            bottom: (<div className='cube-cap'>Bottom</div>)
+          }}
         </Cuboid>
         <div className='plane'></div>
       </View3D>

@@ -7,60 +7,62 @@
     transform-style: preserve-3d;
     top: 50%;
     left: 50%;
-    height: var(--height);
-    width: var(--width);
-    transform: translate(-50%,-50%);
+    height: var(--h);
+    width: var(--w);
+
+    translate: calc(-50% + var(--x)) calc(-50% - var(--y)) calc( var(--z));
+    
     animation: spin 5s linear infinite;
 }
 
 @keyframes spin {
   from {
-      transform: translate(-50%,-100%) rotateY(0deg);
+      transform: rotateY(0deg);
   }
   to {
-      transform: translate(-50%,-100%) rotateY(360deg);
+      transform: rotateY(360deg);
   }
 }
 
 #front {
-    --w: var(--width);
-    --h: var(--height);
-    --offset: calc(var(--depth) / 2);
+    --width: var(--w);
+    --height: var(--h);
+    --offset: calc(var(--d) / 2);
     --rotY: 0;
     --rotX: 0;
 }
 #right {
-    --w: var(--depth);
-    --h: var(--height);
-    --offset: calc(var(--width) / 2);
+    --width: var(--d);
+    --height: var(--h);
+    --offset: calc(var(--w) / 2);
     --rotY: 0.25turn;
     --rotX: 0;
 }
 #back {
-    --w: var(--width);
-    --h: var(--height);
-    --offset: calc(var(--depth) / 2);
+    --width: var(--w);
+    --height: var(--h);
+    --offset: calc(var(--d) / 2);
     --rotY: 0.5turn;
     --rotX: 0;
 }
 #left {
-    --w: var(--depth);
-    --h: var(--height);
-    --offset: calc(var(--width) / 2);
+    --width: var(--d);
+    --height: var(--h);
+    --offset: calc(var(--w) / 2);
     --rotY: 0.75turn;
     --rotX: 0;
 }
 #top {
-    --w: var(--width);
-    --h: var(--depth);
-    --offset: calc(var(--height) / 2);
+    --width: var(--w);
+    --height: var(--d);
+    --offset: calc(var(--h) / 2);
     --rotY: 0;
     --rotX: 0.25turn;
 }
 #bottom {
-    --w: var(--width);
-    --h: var(--depth);
-    --offset: calc(var(--height) / 2);
+    --width: var(--w);
+    --height: var(--d);
+    --offset: calc(var(--h) / 2);
     --rotY: 0;
     --rotX: 0.75turn;
 }
@@ -68,7 +70,7 @@
 .side {
     position: absolute;
     transform-style: preserve-3d;
-    width: var(--w);
-    height: var(--h);
+    width: var(--width);
+    height: var(--height);
     transform: rotateX(var(--rotX)) rotateY(var(--rotY)) translateZ(var(--offset)); 
 }
