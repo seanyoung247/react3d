@@ -6,12 +6,8 @@ import View3D from './components/3d/view3d.js'
 import './App.css'
 
 const camDefault = {
-    x: 0,
-    y: 200,
-    z: 500,
-    rX: 0,
-    rY: 0,
-    rZ: 0,
+    x: 0, y: 200, z: 500,   // Location
+    rX: 0, rY: 0, rZ: 0,    // Rotation
     focalLength: 1000,
 }
 
