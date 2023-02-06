@@ -143,7 +143,7 @@ function App() {
         <p>Focal Length: {camera.focalLength}</p>
       </div>
       <View3D camera={camera}>
-        <Cuboid position={{x: '100px', y: '50px', z: '500px'}} size={ {w:"150px", h:"100px", d:"200px"} }>
+        <Cuboid position={{x: '0px', y: '100px', z: '0px'}} size={ {w: "150px", h: "100px", d: "200px"} }>
           {{
             front: (<div className='cube-side'>Front</div>),
             back: (<div className='cube-side'>Back</div>),
