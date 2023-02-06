@@ -6,7 +6,7 @@
     height: 100%;
 }
 
-.viewport, .scene, .camera {
+.viewport, .scene {
     display: flex;
     justify-content: center;
     align-items: center;
