@@ -11,29 +11,29 @@ export default function Cuboid({
 
     return (
 
-        <Object3D dimensions={ {...position, ...size} } className={ Styles.cuboid }>
+        <Object3D dimensions={ {...position, ...size} }>
 
-            <div id={ Styles.front } className={ Styles.side }>
+            <div style={ {"--r" : 0 } } className={ Styles.zside }>
                 { children.front }
             </div>
 
-            <div id={ Styles.back } className={ Styles.side }>
+            <div style={ {"--r" : "180deg"} } className={ Styles.zside }>
                 { children.back }
             </div>
 
-            <div id={ Styles.left } className={ Styles.side }>
-                { children.left }
-            </div>
-
-            <div id={ Styles.right } className={ Styles.side }>
+            <div style={ {"--r": "90deg"} } className={ Styles.xside }>
                 { children.right }
             </div>
 
-            <div id={Styles.top} className={ Styles.side }>
+            <div style={ {"--r": "-90deg"} } className={ Styles.xside }>
+                { children.left }
+            </div>
+
+            <div style={ {"--r": "90deg"} } className={ Styles.yside }>
                 { children.top }
             </div>
 
-            <div id={ Styles.bottom } className={ Styles.side }>
+            <div style={ {"--r": "-90deg"} } className={ Styles.yside }>
                 { children.bottom }
             </div>
 

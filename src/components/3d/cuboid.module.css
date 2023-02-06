@@ -1,57 +1,23 @@
 
-.cuboid {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-}
-
-#front {
-    --width: var(--w);
-    --height: var(--h);
-    --offset: calc(var(--d) / 2);
-    --rotY: 0;
-    --rotX: 0;
-}
-#right {
-    --width: var(--d);
-    --height: var(--h);
-    --offset: calc(var(--w) / 2);
-    --rotY: 0.25turn;
-    --rotX: 0;
-}
-#back {
-    --width: var(--w);
-    --height: var(--h);
-    --offset: calc(var(--d) / 2);
-    --rotY: 0.5turn;
-    --rotX: 0;
-}
-#left {
-    --width: var(--d);
-    --height: var(--h);
-    --offset: calc(var(--w) / 2);
-    --rotY: 0.75turn;
-    --rotX: 0;
-}
-#top {
-    --width: var(--w);
-    --height: var(--d);
-    --offset: calc(var(--h) / 2);
-    --rotY: 0;
-    --rotX: 0.25turn;
-}
-#bottom {
-    --width: var(--w);
-    --height: var(--d);
-    --offset: calc(var(--h) / 2);
-    --rotY: 0;
-    --rotX: 0.75turn;
-}
-
-.side {
+.xside, .yside, .zside {
     position: absolute;
     transform-style: preserve-3d;
-    width: var(--width);
-    height: var(--height);
-    transform: rotateX(var(--rotX)) rotateY(var(--rotY)) translateZ(var(--offset)); 
+}
+
+.xside {
+    width: var(--d);
+    height: var(--h);
+    transform: rotateY(var(--r)) translateZ(calc(var(--w) / 2));
+}
+
+.yside {
+    width: var(--w);
+    height: var(--d);
+    transform: rotateX(var(--r)) translateZ(calc(var(--h) / 2));
+}
+
+.zside {
+    width: var(--w);
+    height: var(--h);
+    transform: rotateY(var(--r)) translateZ(calc(var(--d) / 2));
 }
