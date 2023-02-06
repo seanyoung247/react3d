@@ -150,9 +150,9 @@ function App() {
         </p>
         <p>Focal Length: {camera.focalLength}</p>
       </div>
-      <View3D camera={camera}>
+      <View3D world={ {width: '1000px', height: '1000px'} } camera={camera}>
         <Cuboid
-          position={{ x: '0px', y: '50px', z: '0px' }}
+          position={{ x: '0px', y: '-50px', z: '0px' }}
           size={{ w: '150px', h: '100px', d: '200px' }}
         >
           {{

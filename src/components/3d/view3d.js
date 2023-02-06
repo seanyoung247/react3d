@@ -8,13 +8,15 @@ const camDefault = {
     focalLength: 1000
 }
 
-export default function View3D({camera = camDefault, children}) {
+export default function View3D({camera = camDefault, world={width:0, height:0}, children}) {
 
     const viewport = {
         "--focalLength": `${camera.focalLength}px`
     }
     
     const scene = {
+        "--wX": world.width,
+        "--wY": world.height,
         "--rotX": `${camera.rX}rad`,
         "--rotY": `${-camera.rY}rad`,
         "--rotZ": `${camera.rZ}rad`

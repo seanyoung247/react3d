@@ -6,10 +6,16 @@
     height: 100%;
 }
 
+.viewport, .scene, .camera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .scene, .camera {
     transform-style: preserve-3d;
-    width: 100%; /* Should be world width */
-    height: 100%; /* Should be world length */
+    width: var(--wX);
+    height: var(--wY);
 }
 
 .scene {
