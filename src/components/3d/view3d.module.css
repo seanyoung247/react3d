@@ -1,19 +1,24 @@
 
 .viewport {
-    overflow:"hidden";
+    overflow: hidden;
     perspective: var(--focalLength, 500px);
-    width:"100%";
-    height:"100%";
+    width: 100%;
+    height: 100%;
 }
 
-.view-pane {
-    transform-style: "preserve-3d";
-    width: "100%";
-    height: "100%";
+.scene, .camera {
+    transform-style: preserve-3d;
+    width: 100%; /* Should be world width */
+    height: 100%; /* Should be world length */
 }
 
 .scene {
     transform-origin: center center var(--focalLength, 500px);
-    transform: rotateX(calc(var(--rotX) * 1rad)) rotateY(calc(var(--rotY, 0) * 1rad)) rotateZ(calc(var(--rotZ) * 1rad));
+    transform: rotateX(var(--rotX)) rotateY(var(--rotY)) rotateZ(var(--rotZ));
+}
+
+.camera {
+    position: relative;
+    translate: var(--posX) var(--posY) var(--posZ);
 }
 
