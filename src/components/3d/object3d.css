@@ -16,6 +16,11 @@
 .face3d {
     position: absolute;
     transform-style: preserve-3d;
-    top: 50%; left: 50%;
-    translate: -50% -50%;
+    /*
+     * Enforces object origin point to be center. !important is used because
+     * these lines enforce object coordinate system so shouldn't be overridden.
+     */
+    top: 50% !important; 
+    left: 50% !important;
+    translate: -50% -50% !important;
 }
