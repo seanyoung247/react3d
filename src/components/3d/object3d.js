@@ -1,11 +1,22 @@
 
 import React from "react";
 
+
 import { worldToCss, rotationToCss } from '../../utils/coords.js';
 import { classList } from '../../utils/classlist.js';
 
 import './object3d.css';
 
+/**
+ * Models a world object, and manages it's position and location.
+ */
+export class WorldObject {
+
+}
+
+/**
+ * Creates a 3D element
+ */
 export function Object3D({dimensions, rotation, style, className, children}) {
 
     const pos = worldToCss(dimensions);
@@ -29,6 +40,9 @@ export function Object3D({dimensions, rotation, style, className, children}) {
     );
 }
 
+/**
+ * Creates a single face of a 3D element
+ */
 export function Face3D({style, className, children}) {
     return (
         <div style={ style } className={ classList('face3d', className) }>
