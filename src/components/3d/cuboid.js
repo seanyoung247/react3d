@@ -13,7 +13,7 @@ export default function Cuboid({
 
         <Object3D 
             dimensions={ {...position, ...size} } 
-            style={ {"--d": size.depth ?? "100px"} }>
+            style={ {"--d": `${size.depth}px` ?? "100px"} }>
 
             <Face3D style={ {"--r" : 0 } } className={ Styles.zside }>
                 { children.front }

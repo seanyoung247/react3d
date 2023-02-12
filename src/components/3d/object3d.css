@@ -1,26 +1,27 @@
 .object3d {
-    transform-style: preserve-3d;
-    position: absolute;
-    height: var(--h);
-    width: var(--w);
     /*
      * These lines move the object to the world origin (0,0,0) and then offset 
      * by it's x,y,z location coordinates. !important is used as these lines 
      * enforce the object coordinate system so shouldn't be overridden.
      */
+    transform-style: preserve-3d !important;
+    position: absolute !important;
+    height: var(--h) !important;
+    width: var(--w) !important;
     top: 50% !important;
     left: 50% !important;
     translate: calc(-50% + var(--x)) calc(-50% - var(--y)) calc( var(--z)) !important;
 }
 
 .face3d {
-    position: absolute;
-    transform-style: preserve-3d;
     /*
-     * Enforces object origin point to be center. !important is used because
-     * these lines enforce object coordinate system so shouldn't be overridden.
+     * Enforces object origin point to be center and 3D positioning.
+     * !important is used because these lines enforce object coordinate 
+     * system so shouldn't be overridden.
      */
-    top: 50% !important; 
+    transform-style: preserve-3d !important;
+    position: absolute !important;
+    top: 50% !important;
     left: 50% !important;
     translate: -50% -50% !important;
 }

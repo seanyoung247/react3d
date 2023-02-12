@@ -1,18 +1,21 @@
 
 import React from "react";
 
-import { classList } from '../../utils/classlist.js'; 
+import { worldToCss } from '../../utils/coords.js';
+import { classList } from '../../utils/classlist.js';
 
 import './object3d.css';
 
 export function Object3D({dimensions, style, className, children}) {
 
+    const pos = worldToCss(dimensions);
+
     const obj = {
-        "--x": dimensions.x ?? '0px',
-        "--y": dimensions.y ?? '0px',
-        "--z": dimensions.z ?? '0px',
-        "--w": dimensions.width ?? "100px",
-        "--h": dimensions.height ?? "100px"
+        "--x": pos.x ?? '0px',
+        "--y": pos.y ?? '0px',
+        "--z": pos.z ?? '0px',
+        "--w": `${dimensions.width}px` ?? "100px",
+        "--h": `${dimensions.height}px` ?? "100px"
     };
 
     return (

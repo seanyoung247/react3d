@@ -147,8 +147,7 @@ function App() {
                     Position x: {camera.x} y: {camera.y} z: {camera.z}
                 </p>
                 <p>
-                    Rotation x: {camera.rX.toFixed(2)} y: {camera.rY.toFixed(2)} z:{' '}
-                    {camera.rZ.toFixed(2)}
+                    Rotation x: {camera.rX.toFixed(2)} y: {camera.rY.toFixed(2)} z: {camera.rZ.toFixed(2)}
                 </p>
                 <p>Focal Length: {camera.focalLength}</p>
             </div>
@@ -160,8 +159,8 @@ function App() {
                 </Cylinder>
 
                 <Cuboid
-                    position={{ x: '100px', y: '50px', z: '250px' }}
-                    size={{ width: '100px', height: '100px', depth: '100px' }}>
+                    position={{ x: 100, y: 50, z: 250 }}
+                    size={{ width: 100, height: 100, depth: 100 }}>
 
                     {{
                         front: <div className="cube-side">Front</div>,
@@ -174,8 +173,8 @@ function App() {
                 </Cuboid>
 
                 <Cuboid
-                    position={{ x: '0px', y: '50px', z: '0px' }}
-                    size={{ width: '150px', height: '100px', depth: '200px' }}>
+                    position={{ x: 0, y: 50, z: 0 }}
+                    size={{ width: 150, height: 100, depth: 200 }}>
 
                     {{
                         front: <div className="cube-side">Front</div>,
