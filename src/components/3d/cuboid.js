@@ -6,13 +6,15 @@ import Styles from './cuboid.module.css';
 
 export default function Cuboid({
     position = {x: 0, y: 0, z: 0}, 
+    rotation = {x: 0, y: 0, z: 0},
     size = {width:"100px", height: "100px", depth: "100px"}, 
     children }) {
 
     return (
 
         <Object3D 
-            dimensions={ {...position, ...size} } 
+            dimensions={ {...position, ...size} }
+            rotation={ rotation }
             style={ {"--d": `${size.depth}px` ?? "100px"} }>
 
             <Face3D style={ {"--r" : 0 } } className={ Styles.zside }>

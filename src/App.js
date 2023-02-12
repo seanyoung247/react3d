@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import View3D from './components/3d/view3d.js';
 import Cuboid from './components/3d/cuboid.js';
-import Cylinder from './components/3d/cylinder.js';
+// import Cylinder from './components/3d/cylinder.js';
 
 import './App.css';
 
@@ -152,11 +152,7 @@ function App() {
                 <p>Focal Length: {camera.focalLength}</p>
             </div>
 
-            <View3D world={{ width: '1000px', height: '1000px' }} camera={camera}>
-
-                <Cylinder>
-
-                </Cylinder>
+            <View3D world={{ width: 1000, height: 1000 }} camera={camera}>
 
                 <Cuboid
                     position={{ x: 100, y: 50, z: 250 }}
@@ -174,6 +170,7 @@ function App() {
 
                 <Cuboid
                     position={{ x: 0, y: 50, z: 0 }}
+                    rotation={{ x: 0, y: 0.5, z: 0 }}
                     size={{ width: 150, height: 100, depth: 200 }}>
 
                     {{

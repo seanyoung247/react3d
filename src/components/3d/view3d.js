@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { worldToCss, rotationToCss } from '../../utils/coords.js';
+
 import Styles from './view3d.module.css';
 
 const camDefault = {
@@ -10,22 +12,25 @@ const camDefault = {
 
 export default function View3D({camera = camDefault, world={width:0, height:0}, children}) {
 
+    const pos = worldToCss(camera);
+    const rot = rotationToCss(camera);
+
     const viewport = {
         "--fL": `${camera.focalLength}px`
     }
     
     const scene = {
-        "--wX": world.width,
-        "--wY": world.height,
-        "--rX": `${camera.rX}rad`,
-        "--rY": `${-camera.rY}rad`,
-        "--rZ": `${camera.rZ}rad`
+        "--wX": `${world.width}px`,
+        "--wY": `${world.height}px`,
+        "--rX": rot.rX,
+        "--rY": rot.rY,
+        "--rZ": rot.rZ
     }
 
     const cam = {
-        "--pX": `${-camera.x}px`,
-        "--pY": `${camera.y}px`,
-        "--pZ": `${-camera.z}px`
+        "--pX": pos.x,
+        "--pY": pos.y,
+        "--pZ": pos.z
     }
 
     return (

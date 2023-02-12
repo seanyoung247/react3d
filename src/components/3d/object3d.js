@@ -1,19 +1,23 @@
 
 import React from "react";
 
-import { worldToCss } from '../../utils/coords.js';
+import { worldToCss, rotationToCss } from '../../utils/coords.js';
 import { classList } from '../../utils/classlist.js';
 
 import './object3d.css';
 
-export function Object3D({dimensions, style, className, children}) {
+export function Object3D({dimensions, rotation, style, className, children}) {
 
     const pos = worldToCss(dimensions);
+    const rot = rotationToCss({rX: rotation.x, rY: rotation.y, rZ: rotation.z});
 
     const obj = {
-        "--x": pos.x ?? '0px',
-        "--y": pos.y ?? '0px',
-        "--z": pos.z ?? '0px',
+        "--pX": pos.x ?? '0px',
+        "--pY": pos.y ?? '0px',
+        "--pZ": pos.z ?? '0px',
+        "--rX": rot.rX ?? '0px',
+        "--rY": rot.rY ?? '0px',
+        "--rZ": rot.rZ ?? '0px',
         "--w": `${dimensions.width}px` ?? "100px",
         "--h": `${dimensions.height}px` ?? "100px"
     };
