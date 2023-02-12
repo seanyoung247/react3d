@@ -1,7 +1,7 @@
 
 .viewport {
     overflow: hidden;
-    perspective: var(--focalLength, 500px);
+    perspective: var(--fL, 500px);
     width: 100%;
     height: 100%;
 }
@@ -19,11 +19,11 @@
 }
 
 .scene {
-    transform-origin: center center var(--focalLength, 500px);
-    transform: rotateX(var(--rotX, 0)) rotateY(var(--rotY, 0)) rotateZ(var(--rotZ, 0));
+    transform-origin: center center var(--fL, 500px);
+    transform: rotateX(var(--rX, 0)) rotateY(var(--rY, 0)) rotateZ(var(--rZ, 0));
 }
 
 .camera {
     position: relative;
-    translate: var(--posX, 0) var(--posY, 0) calc(var(--posZ, 0) + var(--focalLength, 500px));
+    translate: var(--pX, 0) var(--pY, 0) calc(var(--pZ, 0) + var(--fL, 500px));
 }

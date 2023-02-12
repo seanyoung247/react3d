@@ -11,21 +11,21 @@ const camDefault = {
 export default function View3D({camera = camDefault, world={width:0, height:0}, children}) {
 
     const viewport = {
-        "--focalLength": `${camera.focalLength}px`
+        "--fL": `${camera.focalLength}px`
     }
     
     const scene = {
         "--wX": world.width,
         "--wY": world.height,
-        "--rotX": `${camera.rX}rad`,
-        "--rotY": `${-camera.rY}rad`,
-        "--rotZ": `${camera.rZ}rad`
+        "--rX": `${camera.rX}rad`,
+        "--rY": `${-camera.rY}rad`,
+        "--rZ": `${camera.rZ}rad`
     }
 
     const cam = {
-        "--posX": `${-camera.x}px`,
-        "--posY": `${camera.y}px`,
-        "--posZ": `${-camera.z}px`
+        "--pX": `${-camera.x}px`,
+        "--pY": `${camera.y}px`,
+        "--pZ": `${-camera.z}px`
     }
 
     return (
