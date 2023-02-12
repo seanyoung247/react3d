@@ -20,10 +20,16 @@
 
 .scene {
     transform-origin: center center var(--fL, 500px);
-    transform: rotateX(var(--rX, 0)) rotateY(var(--rY, 0)) rotateZ(var(--rZ, 0));
+    transform: 
+        rotateX(var(--rX, 0))
+        rotateY(var(--rY, 0))
+        rotateZ(var(--rZ, 0));
 }
 
 .camera {
     position: relative;
-    translate: var(--pX, 0) var(--pY, 0) calc(var(--pZ, 0) + var(--fL, 500px));
+    translate:
+        var(--pX, 0) 
+        var(--pY, 0) 
+        calc(var(--pZ, 0) + var(--fL, 500px));
 }
