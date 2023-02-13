@@ -8,7 +8,7 @@ import Cuboid from './components/3d/cuboid.js';
 import './App.css';
 
 const camDefault = {
-  x: 0, y: 200, z: 500, // Location
+  x: 0, y: 200, z: -500, // Location
   rX: 0, rY: 0, rZ: 0,  // Rotation
   focalLength: 1000,
 };
@@ -23,26 +23,26 @@ function App() {
                 case 'KeyW':
                     setCamera({
                         ...camera,
-                        z: camera.z - 10,
+                        z: camera.z + 10,
                     });
                     break;
                 case 'KeyS':
                     setCamera({
                         ...camera,
-                        z: camera.z + 10,
+                        z: camera.z - 10,
                     });
                     break;
                 // Move left and right (x-axis)
                 case 'KeyA':
                     setCamera({
                         ...camera,
-                        x: camera.x - 10,
+                        x: camera.x + 10,
                     });
                     break;
                 case 'KeyD':
                     setCamera({
                         ...camera,
-                        x: camera.x + 10,
+                        x: camera.x - 10,
                     });
                     break;
                 // Move up and down (y-axis)
@@ -71,13 +71,13 @@ function App() {
                 case 'KeyQ':
                     setCamera({
                         ...camera,
-                        rY: camera.rY + 0.05,
+                        rY: camera.rY - 0.05,
                     });
                     break;
                 case 'KeyE':
                     setCamera({
                         ...camera,
-                        rY: camera.rY - 0.05,
+                        rY: camera.rY + 0.05,
                     });
                     break;
                 case 'KeyR':
@@ -139,6 +139,15 @@ function App() {
         return () => document.removeEventListener('keydown', keypress);
     });
 
+    const cubeFaces = {
+        front: <div className="cube-side">Front</div>,
+        back: <div className="cube-side">Back</div>,
+        left: <div className="cube-side">Left</div>,
+        right: <div className="cube-side">Right</div>,
+        top: <div className="cube-cap">Top</div>,
+        bottom: <div className="cube-cap">Bottom</div>,
+    };
+
     return (
         <>
             <div id="cam-details">
@@ -158,14 +167,7 @@ function App() {
                     position={{ x: 100, y: 50, z: 250 }}
                     size={{ width: 100, height: 100, depth: 100 }}>
 
-                    {{
-                        front: <div className="cube-side">Front</div>,
-                        back: <div className="cube-side">Back</div>,
-                        left: <div className="cube-side">Left</div>,
-                        right: <div className="cube-side">Right</div>,
-                        top: <div className="cube-cap">Top</div>,
-                        bottom: <div className="cube-cap">Bottom</div>,
-                    }}
+                    { cubeFaces }
                 </Cuboid>
 
                 <Cuboid
@@ -173,14 +175,7 @@ function App() {
                     rotation={{ x: 0, y: 0.5, z: 0 }}
                     size={{ width: 150, height: 100, depth: 200 }}>
 
-                    {{
-                        front: <div className="cube-side">Front</div>,
-                        back: <div className="cube-side">Back</div>,
-                        left: <div className="cube-side">Left</div>,
-                        right: <div className="cube-side">Right</div>,
-                        top: <div className="cube-cap">Top</div>,
-                        bottom: <div className="cube-cap">Bottom</div>,
-                    }}
+                    { cubeFaces }
                 </Cuboid>
 
                 <div className="plane"></div>

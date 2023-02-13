@@ -1,5 +1,6 @@
 
 // import Quaternion from "quaternion";
+import { Vector3 } from "@math.gl/core";
 
 /**
  * Models a single point in 3D space
@@ -115,9 +116,9 @@ export class Vector3D extends Point3D {
  */
 export function worldToCss(coords = {x:0, y:0, z: 0}) {
     return {
-        x: `${-coords.x}px`,
+        x: `${coords.x}px`,
         y: `${coords.y}px`,
-        z: `${-coords.z}px`
+        z: `${coords.z}px`
     };
 }
 
@@ -130,9 +131,9 @@ export function worldToCss(coords = {x:0, y:0, z: 0}) {
  */
 export function cssToWorld(coords = {x: 0, y: 0, z: 0}) {
     return {
-        x: -parseFloat(coords.x),
+        x: parseFloat(coords.x),
         y: parseFloat(coords.y),
-        z: -parseFloat(coords.z)
+        z: parseFloat(coords.z)
     };
 }
 
@@ -145,7 +146,7 @@ export function cssToWorld(coords = {x: 0, y: 0, z: 0}) {
 export function rotationToCss(axes = {rX: 0, rY: 0, rZ: 0}) {
     return {
         rX: `${axes.rX}rad`,
-        rY: `${-axes.rY}rad`,
+        rY: `${axes.rY}rad`,
         rZ: `${axes.rZ}rad`
     };
 }
@@ -159,7 +160,7 @@ export function rotationToCss(axes = {rX: 0, rY: 0, rZ: 0}) {
 export function cssToRotation(axes = {rX: 0, rY: 0, rZ: 0}) {
     return {
         rX: parseFloat(axes.rX),
-        rY: -parseFloat(axes.rY),
+        rY: parseFloat(axes.rY),
         rZ: parseFloat(axes.rZ)
     };
 }
