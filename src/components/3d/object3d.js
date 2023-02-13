@@ -1,7 +1,6 @@
 
 import React from "react";
 
-
 import { worldToCss, rotationToCss } from '../../utils/coords.js';
 import { classList } from '../../utils/classlist.js';
 

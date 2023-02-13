@@ -1,4 +1,111 @@
 
+// import Quaternion from "quaternion";
+
+/**
+ * Models a single point in 3D space
+ */
+export class Point3D {
+    constructor(x = 0, y = 0, z = 0) {
+        this._x = x;
+        this._y = y;
+        this._z = z;
+    }
+
+    clone() {
+        return new this.constructor(this._x, this._y, this._z);
+    }
+
+    copy(point) {
+        this._x = point._x;
+        this._y = point._y;
+        this._z = point._z;
+    }
+
+    /* Property accessors */
+    get x() { return this._x; }
+    set x(x) { this._x = x; }
+    get y() { return this._y; }
+    set y(y) { this._y = y; }
+    get z() { return this._z; }
+    set z(z) { this._z = z; }
+
+    /**
+     * Returns the euclidean distance between two points.
+     * @param {Point3D} point 
+     * @returns 
+     */
+    distanceTo(point) {
+        const x = point._x - this._x;
+        const y = point._y - this._y;
+        const z = point._z - this._z;
+        return Math.sqrt( (x * x) + (y * y) + (z * z) );
+    }
+}
+
+/**
+ * Models a 3D vector
+ */
+export class Vector3D extends Point3D {
+    /**
+     * Returns the length on this vector
+     */
+    get magnitude() {
+        return Math.sqrt( 
+            (this._x ** 2) + 
+            (this._y ** 2) + 
+            (this._z ** 2) 
+        );
+    }
+
+    /**
+     * Rescales this vector to a new magnitude
+     */
+    set magnitude(val) {
+        this.normalize();
+        this._x *= val;
+        this._y *= val;
+        this._z *= val;
+    }
+
+    /**
+     * Sets this vectors magintude to 1.
+     */
+    normalize() {
+        const magnitude = this.magnitude;
+        this._x /= magnitude;
+        this._y /= magnitude;
+        this._z /= magnitude;
+    }
+
+    /**
+     * Adds a Vector3D to this one
+     */
+    add(vector) {
+        this._x += vector._x;
+        this._y += vector._y;
+        this._z += vector._z;
+    }
+    /**
+     * Subtracts a Vector3D from this one
+     */
+    sub(vector) {
+        this._x -= vector._x;
+        this._y -= vector._y;
+        this._z -= vector._z;
+    }
+    /**
+     * Calculates the dot product of two vectors.
+     */
+    dot(vector) {
+        return (
+            (this._x * vector._x) + 
+            (this._y * vector._y) + 
+            (this._z * vector._z)
+        );
+    }
+}
+
+
 /**
  * Converts world coordinates to CSS values.
  * World coordinates are right-handed y-up.
